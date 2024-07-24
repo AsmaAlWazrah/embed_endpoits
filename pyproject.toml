@@ -1,0 +1,38 @@
+[project]
+name = "Embedding-API"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "aalwazrah", email = "aalwazrah@ksaa.gov.sa"},
+]
+dependencies = [
+    "click>=8.1.7",
+    "fastapi>=0.110.0",
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.1",
+    "pytest>=8.1.1",
+    "uvicorn>=0.28.0",
+    "pydantic-settings>=2.2.1",
+    "openai>=1.14.0",
+    "ijson>=3.2.3",
+    "pymongo[aws]>=4.6.2",
+    "boto3>=1.34.64",
+    "oss2>=2.18.4",
+    "pyarabic>=0.6.15",
+    "transformers>=4.43.1",
+    "pandas>=2.2.2",
+    "tensorflow>=2.17.0",
+    "tf-keras>=2.17.0",
+    "torch>=2.3.1",
+    "sentence-transformers>=3.0.1",
+]
+requires-python = "==3.10.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+localserver  = "uvicorn src.embedding_api.api:app --host 0.0.0.0 --port 3000 --reload"
